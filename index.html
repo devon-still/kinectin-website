@@ -532,7 +532,7 @@
     <li><a href="#how">How It Works</a></li>
     <li><a href="#about">Our Mission</a></li>
   </ul>
-  <a href="#cta" class="nav-cta">Get Started</a>
+  <a href="#" class="nav-cta smart-link">Get Started</a>
 </nav>
 
 <!-- HERO -->
@@ -542,7 +542,7 @@
     <h1>Supporting <em>people.</em> Empowering <em>leaders.</em></h1>
     <p class="hero-sub">Personalized well-being support for healthcare professionals, and evidence-based guidance for the leaders responsible for their care.</p>
     <div class="hero-actions">
-      <a href="#cta" class="btn-primary">Start for Free</a>
+      <a href="#" class="btn-primary smart-link">Start for Free</a>
       <a href="https://forms.monday.com/forms/f05d4bd684539d09fb14555419d53c48?r=use1" class="btn-ghost">Book a Demo <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
     </div>
   </div>
@@ -1082,7 +1082,7 @@
   <h2>Ready to reduce the <em>human cost</em> of care?</h2>
   <p>Whether you are a healthcare professional looking for support, or a healthcare leader ready to act, Kinectin helps you detect strain early and respond responsibly.</p>
   <div class="cta-buttons">
-    <a href="#" class="btn-white">Start for Free</a>
+    <a href="#" class="btn-white smart-link">Start for Free</a>
     <a href="https://forms.monday.com/forms/f05d4bd684539d09fb14555419d53c48?r=use1" class="btn-outline-white">Book a Demo</a>
   </div>
 </section>
@@ -1094,5 +1094,26 @@
   <p>Privacy · Terms · Contact</p>
 </footer>
 
+<script>
+(function() {
+  function getSmartLink() {
+    var ua = navigator.userAgent || navigator.vendor || window.opera;
+    if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
+      return 'https://apps.apple.com/us/app/kinectin/id6746169365';
+    }
+    if (/android/i.test(ua)) {
+      return 'https://play.google.com/store/apps/details?id=com.kinectin.app&pli=1';
+    }
+    return 'https://app.kinectin.com';
+  }
+  document.addEventListener('click', function(e) {
+    var el = e.target.closest('.smart-link');
+    if (el) {
+      e.preventDefault();
+      window.location.href = getSmartLink();
+    }
+  });
+})();
+</script>
 </body>
 </html>
