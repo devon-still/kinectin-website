@@ -440,11 +440,16 @@
   footer {
     background: #3d38b0; border-top: 1px solid rgba(255,255,255,0.06);
     padding: 40px 60px;
-    display: flex; justify-content: space-between; align-items: center;
+    display: flex; justify-content: space-between; align-items: center; gap: 16px;
   }
+  footer img { height: 44px; width: auto; filter: brightness(0) invert(1); opacity: 0.9; }
   .footer-logo { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: white; }
   .footer-logo span { color: #c8c6ff; }
-  footer p { font-size: 0.82rem; color: rgba(255,255,255,0.35); }
+  footer p { font-size: 0.82rem; color: rgba(255,255,255,0.55); margin-top: 8px; }
+  .footer-links { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
+  .footer-links a { font-size: 0.82rem; color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: rgba(255,255,255,1); }
+  .footer-sep { color: rgba(255,255,255,0.25); font-size: 0.75rem; }
 
 
   @media (max-width: 768px) {
@@ -491,7 +496,8 @@
     .org-dash { min-height: 0 !important; }
 
     /* --- Logo sizing --- */
-    nav img, footer img { height: 32px !important; width: auto !important; max-width: 200px !important; }
+    nav img { height: 32px !important; width: auto !important; max-width: 200px !important; }
+    footer img { height: 36px !important; width: auto !important; }
   }
 
   @media (max-width: 480px) {
