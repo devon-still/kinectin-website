@@ -494,8 +494,7 @@
     /* --- Section padding for inline-styled sections --- */
     .diff-section, .cost-section, .impact-section { padding: 60px 20px !important; }
 
-    /* --- Org dashboard auto height --- */
-    .org-dash { min-height: 0 !important; }
+    /* --- Org dashboard height is set by JS --- */
 
     .card-trio { grid-template-columns: 1fr; gap:14px; }
     /* --- Logo sizing --- */
@@ -880,7 +879,7 @@
     <br>
 
   </div>
-  <div class="org-dash" style="position:relative; overflow:hidden; min-height:420px;">
+  <div class="org-dash" style="position:relative; overflow:hidden;">
 
     <!-- SCENE 1: DASHBOARD -->
     <div id="org-scene1" style="transition:opacity 0.6s, transform 0.6s;">
@@ -953,6 +952,34 @@
 
 <script>
 (function() {
+  // ── Size the carousel container to the taller of the two cards ──────────
+  var dash  = document.querySelector('.org-dash');
+  var s1    = document.getElementById('org-scene1');
+  // scene2 is position:absolute; top:40px — measure its inner card
+  var s2card = document.getElementById('org-scene2').firstElementChild;
+  // dots live in normal flow after scene1; reserve space for them
+  var DOTS_CLEARANCE = 36; // 16px margin-top + 4px height + 16px buffer
+
+  function sizeContainer() {
+    // Temporarily un-hide scene2 card so it can report a natural height
+    // (opacity:0 doesn't affect offsetHeight, but just to be safe)
+    var s1h = s1.offsetHeight;
+    var s2h = 40 + s2card.offsetHeight; // 40px = top offset of org-scene2
+    var needed = Math.max(s1h, s2h) + DOTS_CLEARANCE;
+    dash.style.height = needed + 'px';
+  }
+
+  // Run immediately (DOM is already painted when this script runs inline)
+  sizeContainer();
+
+  // Re-run on resize so portrait↔landscape and window resizes stay correct
+  var resizeTimer;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(sizeContainer, 100);
+  });
+
+  // ── Scene toggle ─────────────────────────────────────────────────────────
   var orgScene = 1;
   function showOrgScene(n) {
     [1,2].forEach(function(i) {
