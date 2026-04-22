@@ -75,18 +75,14 @@
     max-width: 640px;
   }
 
-  .form-cta {
-    text-align: center;
-    padding: 60px 0 80px;
+  .form-embed {
+    display: flex;
+    justify-content: center;
+    padding: 40px 0 80px;
   }
-  .btn-primary {
-    display: inline-block;
-    background: var(--teal); color: white;
-    padding: 20px 48px; border-radius: 100px;
-    text-decoration: none; font-weight: 600; font-size: 1.15rem;
-    transition: all 0.2s; box-shadow: 0 4px 20px rgba(78,73,210,0.3);
+  .form-embed iframe {
+    max-width: 100%;
   }
-  .btn-primary:hover { background: var(--teal-dark); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(78,73,210,0.35); }
 
   /* ---- FOOTER ---- */
   footer {
@@ -137,8 +133,8 @@
   <h1>Welcome, <em>Nemours</em> team</h1>
   <p class="intro">Thank you for participating in the Kinectin pilot. Please complete the form below to get started.</p>
 
-  <div class="form-cta">
-    <a href="https://forms.monday.com/forms/de110c088afef0df8dcec6ed7b711b8e?r=use1" target="_blank" rel="noopener noreferrer" class="btn-primary">Open the Nemours Pilot Form</a>
+  <div class="form-embed">
+    <iframe src="https://forms.monday.com/forms/embed/de110c088afef0df8dcec6ed7b711b8e?r=use1" width="650" height="500" style="border: 0; box-shadow: 5px 5px 56px 0px rgba(0,0,0,0.25);"></iframe>
   </div>
 </div>
 
