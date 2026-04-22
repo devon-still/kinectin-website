@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Kinectin — Nemours Pilot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #4E49D2;
+    --teal-light: #e8e7ff;
+    --teal-dark: #3d38b0;
+    --slate: #1c2b3a;
+    --mist: #f3f7f6;
+    --warm: #f9f5f0;
+    --accent: #e8673a;
+    --text: #2d3f4e;
+    --subtle: #7a94a1;
+    --white: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* ---- NAV ---- */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 60px;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(78,73,210,0.12);
+  }
+  .logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.6rem;
+    color: var(--slate);
+    letter-spacing: -0.5px;
+    text-decoration: none;
+  }
+  .logo span { color: var(--teal); }
+
+  /* ---- MAIN CONTENT ---- */
+  .content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 140px 40px 60px;
+  }
+
+  h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    line-height: 1.15;
+    color: var(--slate);
+    letter-spacing: -0.5px;
+    margin-bottom: 16px;
+  }
+  h1 em { font-style: italic; color: var(--teal); }
+
+  .intro {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--subtle);
+    margin-bottom: 40px;
+    max-width: 640px;
+  }
+
+  .form-wrapper {
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(28,43,58,0.08);
+    margin-bottom: 60px;
+  }
+  .form-wrapper iframe {
+    display: block;
+    width: 100%;
+    height: 1200px;
+    border: none;
+  }
+
+  /* ---- FOOTER ---- */
+  footer {
+    background: #3d38b0; border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 40px 60px;
+    display: flex; justify-content: space-between; align-items: flex-end; gap: 16px;
+  }
+  .footer-logo { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: white; }
+  .footer-logo span { color: #c8c6ff; }
+  footer p { font-size: 0.82rem; color: rgba(255,255,255,0.55); margin-top: 8px; }
+  .footer-links { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; justify-content: flex-end; padding-bottom: 0; }
+  .footer-links a { font-size: 0.82rem; color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: rgba(255,255,255,1); }
+  .footer-sep { color: rgba(255,255,255,0.25); font-size: 0.75rem; }
+
+  /* ---- RESPONSIVE ---- */
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    .content { padding: 110px 24px 40px; }
+    footer { flex-direction: column; gap: 16px; text-align: center; padding: 32px 24px; }
+    .footer-links { justify-content: center; }
+  }
+
+  @media (max-width: 480px) {
+    .content { padding: 100px 16px 32px; }
+    .form-wrapper iframe { height: 900px; }
+    footer { padding: 24px 16px; }
+  }
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DLW77QDXRE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DLW77QDXRE');
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">Kinectin<span>.</span></a>
+</nav>
+
+<!-- CONTENT -->
+<div class="content">
+  <h1>Welcome, <em>Nemours</em> team</h1>
+  <p class="intro">Thank you for participating in the Kinectin pilot. Please complete the form below to get started.</p>
+
+  <div class="form-wrapper">
+    <iframe src="https://forms.monday.com/forms/de110c088afef0df8dcec6ed7b711b8e?r=use1"
+            title="Nemours Pilot Sign-Up Form"
+            loading="lazy"
+            allowfullscreen></iframe>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo">Kinectin<span>.</span></div>
+    <p>&copy; 2025 Kinectin. All rights reserved.</p>
+  </div>
+  <div class="footer-links">
+    <a href="your-data.html">Privacy Policy</a>
+    <span class="footer-sep">&middot;</span>
+    <a href="your-data.html#delete-account">Delete Account / Manage Data</a>
+    <span class="footer-sep">&middot;</span>
+    <a href="mailto:support@kinectin.com">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
